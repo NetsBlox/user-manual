@@ -9,7 +9,7 @@ To get started, a simple implementation of the popular game "Twenty Questions" w
 
 Right off the bat, you can see that there's a need for communication between the two players-- this is where the concept of _messaging_ comes into play. The guesses from the guesser will have to be visible to the answerer in order to verify them. Below is a simple example of how you can achieve this.
 
-![Send msg example](screenshots/guess.png?raw=true)
+![Send msg example](screenshots/guess.png)
 
 The message "guess" will be sent to the "answerer" with the variable "answer" holding the guess from the guesser (the blue "answer" variable is just the standard variable used by Snap! for every input). To verify this guess, blocks on the answerer's side could look something like below.
 
