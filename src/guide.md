@@ -37,7 +37,7 @@ Now that the concepts of messages and rooms have been introduced, let's add remo
 
 With these features, you can see how server-side support would be helpful. That is where the Battleship RPC comes in play. It will help keep track of the game grids and ships. It will also give support in executing the game. Because of the nature of this turn-based game, both roles will have similar blocks, the only difference being who the messages are sent to. Thus, I recommend creating the blocks for one role and cloning them over (adjusting the sender/receiver) to avoid unnecessary work.  
 
-To start off, we will need 2 "game boards". For this implementation, we will be using figure 7.
+To start off, we will need 2 "game boards". For this implementation, we will be using the boards below.
 
 ![Example Battleship Playing Grids](screenshots/grid.PNG)
 
@@ -53,13 +53,13 @@ For this implementation, a list was created for each ship in order to compactly 
 
 For calculating and converting the coordinates of the ships into row/column numbers, a little mathematical analysis is required. Take note of the boundaries of the board as well as the size that each space occupies in order to accurately convert the dimensions. Below is the thought process behind what was implemented for this example:
 
-Because the bottom of the grid is at y: -120, to calculate the row of the ship you have to add 120 (because this coordinate system is positive-based), then add 10 (half of each block's height because the y position of a sprite lies in the middle of the block) for every block over 1 that the ship is (because the y position of a ship increases with its length in the upright orientation). For example, in the case of a patrol boat, because it occupies 2 blocks, you add 10 to the original 120\. Then, you divide by the size of a block (20 in this case). Additionally, you must round down to avoid rounding errors (without rounding the row number would increase ahead of the ship). To calculate the column, because the left side of the grid is at x: -210, you have to add 210 (again, because this coordinate system is positive-based) and divide by the size of each block (20), rounding down. Because each ship always has the same x position with the upright orientation, this is the same calculation for all ships. Following that same methodology, the blocks for setting the coordinates of a patrol boat in the side orientation would be as shown in figure 9.
+Because the bottom of the grid is at y: -120, to calculate the row of the ship you have to add 120 (because this coordinate system is positive-based), then add 10 (half of each block's height because the y position of a sprite lies in the middle of the block) for every block over 1 that the ship is (because the y position of a ship increases with its length in the upright orientation). For example, in the case of a patrol boat, because it occupies 2 blocks, you add 10 to the original 120\. Then, you divide by the size of a block (20 in this case). Additionally, you must round down to avoid rounding errors (without rounding the row number would increase ahead of the ship). To calculate the column, because the left side of the grid is at x: -210, you have to add 210 (again, because this coordinate system is positive-based) and divide by the size of each block (20), rounding down. Because each ship always has the same x position with the upright orientation, this is the same calculation for all ships. Following that same methodology, the blocks for setting the coordinates of a patrol boat in the side orientation would be as shown below.
 
 ![Example setting of patrol boat coordinates](screenshots/side.PNG)
 
 For each bigger ship after, you will begin to recognize patterns in the differences of the numbers. Use these!  
 
-After calculating the row/column of each ship, we need to figure out a way to actually "place" them on the grid. Again, this is where the Battleship RPC comes in play. Figure 10 is how you could use the "place" block to correctly place a ship on the grid in the correct orientation (remember item 2 of the list is whether it is upright or not).
+After calculating the row/column of each ship, we need to figure out a way to actually "place" them on the grid. Again, this is where the Battleship RPC comes in play. Below is how you could use the "place" block to correctly place a ship on the grid in the correct orientation (remember item 2 of the list is whether it is upright or not).
 
 ![Example placing of patrol boat](screenshots/place.PNG)
 
@@ -67,29 +67,30 @@ Next would be to figure out a way to "fire" at the enemy ships. This is pretty s
 
 ![Example firing at enemy ship](screenshots/fire.PNG)
 
-Now all we need is to figure out how to keep track of sunken ship parts/ships and end the game. Thankfully, the Battleship RPC has a custom block that we can use to determine the number of active ships in play. Additionally, every time we "fire", each person receives a "miss" or "hit" message as defined in the wiki. We can use this to manage the sinking of ships. For example, figure 12 is a sample block structure that can be used to portray a sunken ship.
+Now all we need is to figure out how to keep track of sunken ship parts/ships and end the game. Thankfully, the Battleship RPC has a custom block that we can use to determine the number of active ships in play. Additionally, every time we "fire", each person receives a "miss" or "hit" message as defined in the wiki. We can use this to manage the sinking of ships. For example, below is a sample block structure that can be used to portray a sunken ship.
 
 ![Example receiving of "hit" message](screenshots/hit.PNG)
 
-Additionally, you could use the block as shown in figure 13 to determine when all the ships of a player has sunk:
+Additionally, you could use this to determine when all the ships of a player has sunk:
 
-![Block to show how many ships a player has left](screenshots/length.png)
+![Block to show how many ships a player has left](screenshots/length.PNG)
 
-The key to any project is identifying what each custom RPC block can do. Realizing that each person receives a "your turn" message after the enemy has fired, you can combine the two to signify the player's loss as shown in figure 14.
+The key to any project is identifying what each custom RPC block can do. Realizing that each person receives a "your turn" message after the enemy has fired, you can combine the two to signify the player's loss as shown ibelow.
 
 ![Example receiving of "your turn" message](screenshots/lost.PNG)
 
 Now that all of the core features in place, this is where you can add in your own features and ideas. Be creative! This implementation added: boundaries for placing ships, snapping into position, collision detection, and reset/restart, among others.
 
 ![Checking for valid dimensions](screenshots/invalid.PNG)
+This will report whether or not the patrol boat is in a valid position. Use the boundaries of the game board to determine the coordinates that are playable.
 
 ![Resetting patrol boat](screenshots/reset.PNG)
 
-Figure 15 will report whether or not the patrol boat is in a valid position. Use the boundaries of the game board to determine the coordinates that are playable. You can follow that with figure 16 in order to reset the ship's position and make sure the player picks a valid spot. 
+You can follow that with this in order to reset the ship's position and make sure the player picks a valid spot. 
 
 ![Example implementation of snapping a patrol boat into position](screenshots/snap.PNG)
 
-This block [figure 17] calculates the closest space for a ship by figuring out where it is relative to a valid space and moving accordingly. Moreover, you can detect whether or not it's touching another ship like shown in figure 18.
+This block calculates the closest space for a ship by figuring out where it is relative to a valid space and moving accordingly. Moreover, you can detect whether or not it's touching another ship like shown below.
 
 ![Checking for presence of other ships](screenshots/touching.PNG)
 
