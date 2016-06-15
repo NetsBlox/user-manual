@@ -82,6 +82,7 @@ The key to any project is identifying what each custom RPC block can do. Realizi
 Now that all of the core features in place, this is where you can add in your own features and ideas. Be creative! This implementation added: boundaries for placing ships, snapping into position, collision detection, and reset/restart, among others.
 
 ![Checking for valid dimensions](screenshots/invalid.PNG)
+
 This will report whether or not the patrol boat is in a valid position. Use the boundaries of the game board to determine the coordinates that are playable.
 
 ![Resetting patrol boat](screenshots/reset.PNG)
