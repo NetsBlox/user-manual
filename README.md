@@ -1,5 +1,7 @@
 % NetsBlox User's Guide
+
 % Brian Broll
+
 % April 28, 2016
 
 # Introduction
