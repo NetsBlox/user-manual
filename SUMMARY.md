@@ -1,6 +1,6 @@
 # Summary
 
 * [About](README.md)
-* [Examples](examples.md)
 * Introduction
+* [Examples](examples.md)
 
