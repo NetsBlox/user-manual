@@ -25,6 +25,13 @@ These blocks signify that once the answerer receives the guesser's yes/no questi
 
 ![Guesser's Light Script](screenshots/completeguess2.PNG)
 
+To quickly demonstrate the potential of remote procedure calls and server support, the following is how you could implement "Twenty Questions" using the RPC provided:
+
+![Answerer's Game Script](screenshots/rpcanswer.PNG)
+![Guesser's Game Script](screenshos/rpcguess.PNG)
+
+Notice how concise, readable, and elegant the blocks are. Additionally, this RPC even provides much more functionality than the client-based version. To name a few, the server safeguards against invalid user input/actions, automatically stops the game if the guesser enters the correct answer, keeps track of variables such as guess count & player turn, and more.
+
 # Example Implementation: Battleship
 
 Now that the concepts of messages and rooms have been introduced, let's add remote procedure calls into the mix and implement _Battleship_. If you're unfamiliar with this game, you can view the rules [here](http://www.hasbro.com/common/instruct/Battleship.PDF). As with "Twenty Questions", it's best to be aware of the most important parts/features of the game. Below is a reasonable list of key features/needs that Battleship requires:
