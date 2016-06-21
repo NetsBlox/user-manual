@@ -54,19 +54,19 @@ Now we will need 5 game pieces of the appropriate size (2-5 spaces). For this im
 
 Now we will need to figure out a way to map the position of a ship on the grid to the specific coordinates that the Battleship RPC needs (row/column). First, we must understand the orientation methodology of the Battleship RPC. As found in the wiki, if a patrol boat is placed at (I, 2) and (I, 3), it should be placed on the board as (I, 2) facing west. Similarly, if it's placed at (I, 2) and (H, 2), it should be placed on the board as (I, 2) facing north. You can track the x and y position of a ship under the "motion" block category. Similarly, you can track the x and y position of your mouse under the "sensing" block category.  
 
-For this implementation, a list was created for each ship in order to compactly contain the data. For instance, the "patrol boat info" list contains 4 items, 1) whether it is placed or not, 2) whether the orientation is upright or not, 3) the row, and 4) the column. To map the position of the ship to the appropriate row/column, you will need to analyze the x/y coordinates of each "space" on the grid and convert them into row and column numbers. See below for setting the position of an upright patrol boat for reference.
+For this implementation, a list was created for each ship in order to compactly contain the data. For instance, the `patrol boat info` list contains 4 items, 1) whether it is placed or not, 2) whether the orientation is upright or not, 3) the row, and 4) the column. To map the position of the ship to the appropriate row/column, you will need to analyze the x/y coordinates of each "space" on the grid and convert them into row and column numbers. See below for setting the position of an upright patrol boat for reference.
 
 ![Example setting of patrol boat coordinates](screenshots/upright.PNG)
 
 For calculating and converting the coordinates of the ships into row/column numbers, a little mathematical analysis is required. Take note of the boundaries of the board as well as the size that each space occupies in order to accurately convert the dimensions. Below is the thought process behind what was implemented for this example:
 
-Because the bottom of the grid is at y: -120, to calculate the row of the ship you have to add 120 (because this coordinate system is positive-based), then add 10 (half of each block's height because the y position of a sprite lies in the middle of the block) for every block over 1 that the ship is (because the y position of a ship increases with its length in the upright orientation). For example, in the case of a patrol boat, because it occupies 2 blocks, you add 10 to the original 120\. Then, you divide by the size of a block (20 in this case). Additionally, you must round down to avoid rounding errors (without rounding the row number would increase ahead of the ship). To calculate the column, because the left side of the grid is at x: -210, you have to add 210 (again, because this coordinate system is positive-based) and divide by the size of each block (20), rounding down. Because each ship always has the same x position with the upright orientation, this is the same calculation for all ships. Following that same methodology, the blocks for setting the coordinates of a patrol boat in the side orientation would be as shown below.
+Because the bottom of the grid is at y: -120, to calculate the row of the ship you have to add 120 (because this coordinate system is positive-based), then add 10 (half of each block's height because the y position of a sprite lies in the middle of the block) for every block over 1 that the ship is (because the y position of a ship increases with its length in the upright orientation). For example, in the case of a patrol boat, because it occupies 2 blocks, you add 10 to the original 120. Then, you divide by the size of a block (20 in this case). Additionally, you must round down to avoid rounding errors (without rounding the row number would increase ahead of the ship). To calculate the column, because the left side of the grid is at x: -210, you have to add 210 (again, because this coordinate system is positive-based) and divide by the size of each block (20), rounding down. Because each ship always has the same x position with the upright orientation, this is the same calculation for all ships. Following that same methodology, the blocks for setting the coordinates of a patrol boat in the side orientation would be as shown below.
 
 ![Example setting of patrol boat coordinates](screenshots/side.PNG)
 
 For each bigger ship after, you will begin to recognize patterns in the differences of the numbers. Use these!  
 
-After calculating the row/column of each ship, we need to figure out a way to actually "place" them on the grid. Again, this is where the Battleship RPC comes in play. Below is how you could use the "place" block to correctly place a ship on the grid in the correct orientation (remember item 2 of the list is whether it is upright or not).
+After calculating the row/column of each ship, we need to figure out a way to actually "place" them on the grid. Again, this is where the Battleship RPC comes in play. Below is how you could use the `place` block to correctly place a ship on the grid in the correct orientation (remember item 2 of the list is whether it is upright or not).
 
 ![Example placing of patrol boat](screenshots/place.PNG)
 
@@ -82,7 +82,7 @@ Additionally, you could use this to determine when all the ships of a player has
 
 ![Block to show how many ships a player has left](screenshots/length.PNG)
 
-The key to any project is identifying what each custom RPC block can do. Realizing that each person receives a "your turn" message after the enemy has fired, you can combine the two to signify the player's loss as shown ibelow.
+The key to any project is identifying what each custom RPC block can do. Realizing that each person receives a `your turn` message after the enemy has fired, you can combine the two to signify the player's loss as shown ibelow.
 
 ![Example receiving of "your turn" message](screenshots/lost.PNG)
 
