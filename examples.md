@@ -28,7 +28,7 @@ These blocks signify that once the answerer receives the guesser's yes/no questi
 To quickly demonstrate the potential of remote procedure calls and server support, the following is how you could implement "Twenty Questions" using the RPC provided:
 
 ![Answerer's Game Script](screenshots/rpcanswer.PNG)
-![Guesser's Game Script](screenshos/rpcguess.PNG)
+![Guesser's Game Script](screenshots/rpcguess.PNG)
 
 Notice how concise, readable, and elegant the blocks are. Additionally, this RPC even provides much more functionality than the client-based version. To name a few, the server safeguards against invalid user input/actions, automatically stops the game if the guesser enters the correct answer, keeps track of variables such as guess count & player turn, and more.
 
