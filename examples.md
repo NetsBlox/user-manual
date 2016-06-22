@@ -15,17 +15,12 @@ The message "guess" will be sent to the "answerer" with the variable "answer" ho
 
 ![Receive msg example](screenshots/answer.PNG)
 
-These blocks signify that once the answerer receives the guesser's yes/no question, he answers it and sends that answer back to the guesser. This is the core foundation behind an implementation of the game, and shows how simple yet powerful messages can be. Below is how you could go about creating the entire game, with a few extra things added in that enhance the user experience such as annotations and changing light sprites based on turn.  
+These blocks signify that once the answerer receives the guesser's yes/no question, he answers it and sends that answer back to the guesser. This is the core foundation behind an implementation of the game, and shows how simple yet powerful messages can be. Below is how you could go about creating the entire game:
 
 ![Answerer's Game Script](screenshots/completeanswer.PNG)
-
-![Answerer's Light Script](screenshots/completeanswer2.PNG)
-
 ![Guesser's Game Script](screenshots/completeguess.PNG)
 
-![Guesser's Light Script](screenshots/completeguess2.PNG)
-
-To quickly demonstrate the potential of remote procedure calls and server support, the following is how you could implement "Twenty Questions" using the RPC provided:
+To quickly demonstrate the potential of *remote procedure calls* and server support, the following is how you could implement "Twenty Questions" using the "Twenty Questions" RPC provided:
 
 ![Answerer's Game Script](screenshots/rpcanswer.PNG)
 ![Guesser's Game Script](screenshots/rpcguess.PNG)
