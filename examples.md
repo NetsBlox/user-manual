@@ -1,4 +1,4 @@
-# Warm-up: Twenty Questions
+# Example: Twenty Questions
 
 To get started, a simple implementation of the popular game "Twenty Questions" will introduce some of the main concepts of NetsBlox. The game goes as follows: one person thinks of something. The other person has 20 yes/no questions to guess what it is. If it is not guessed within 20 chances, the guesser loses. Simple enough, right? The most important parts to consider are as follows:
 
@@ -27,7 +27,7 @@ To quickly demonstrate the potential of *remote procedure calls* and server supp
 
 Notice how concise, readable, and elegant the blocks are. Additionally, this RPC even provides much more functionality than the client-based version. To name a few, the server safeguards against invalid user input/actions, automatically stops the game if the guesser enters the correct answer, keeps track of variables such as guess count & player turn, and more.
 
-# Example Implementation: Battleship
+# Example: Battleship
 
 Now that the concepts of messages and rooms have been introduced, let's add remote procedure calls into the mix and implement _Battleship_. If you're unfamiliar with this game, you can view the rules [here](http://www.hasbro.com/common/instruct/Battleship.PDF). As with "Twenty Questions", it's best to be aware of the most important parts/features of the game. Below is a reasonable list of key features/needs that Battleship requires:
 
