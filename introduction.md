@@ -3,11 +3,9 @@
 Welcome to Netsblox! This visual programming environment can be very powerful once you understand the concepts underlying it. There are three main ideas behind NetsBlox that make it unique--*messages*, *rooms*, and *remote procedure calls*. 
 
 #### Jump To:
-[Messages](#messages)
-
-[Remote Procedure Calls](#RPCs)
-
-[Rooms](#rooms)
+[Messages](#messages)  
+[Remote Procedure Calls](#rpcs)  
+[Rooms](#rooms)  
 
 # Getting Started
 
@@ -26,10 +24,10 @@ This is the landing page and editor for NetsBlox. You can access it [here.](http
 
 ![](screenshots/sendmsg_dropdown.PNG)
 
-Above is the block to use to send a message. There are two drop-down menus. The first one expects the *message type* to be sent. A message type can be thought as a unique name given to a specific message that holds variable(s). To create a message type, click on the `Make a message type` block located in the same area as the other message blocks. 
+Above is the block to use to send a message. There are two drop-down menus. The first one expects the *message type* to be sent. A message type can be thought as a unique name given to a specific message that holds variable(s). To create a message type, click on the `Make a message type` block located in the same area as the other message blocks.  
 ![](screenshots/makemsg.PNG)
 
-The following window should pop up:
+The following window should pop up:  
 ![](screenshots/makemsg2.PNG)
 
 Here you can see that a message type is composed of two parts: a name, and the variables (or `fields`) that it holds. Let's create a message type named "test" with the field "score". After creating it, you are then able to select it in the `send msg` drop-down:
@@ -61,14 +59,14 @@ After clicking the "test" message type, you can see that the variable "score" is
 
 ![](screenshots/msg_dropdown3.PNG)
 
-<a name="RPCs" />
+<a name="rpcs" />
 # Remote Procedure Calls
 
 ![](screenshots/import_rpc.PNG) ![](screenshots/rpc.PNG)
 
 *Remote Procedure Calls* (or RPCs for short) provide server support and can help with some of the more complicated and intricate parts of a project. To import an RPC, click the white document at the top of the page and click "Remote Calls...". Once imported, the server support can be utilized in the form of custom blocks. 
 
-![](screenshots/rpcblocks.PNG)
+![](screenshots/rpcblocks.PNG)  
 For example, above is what can be see after importing the "Battleship" RPC. These blocks are calls to the NetsBlox server, executing scripts written on the server. For instance, the `start game` block places all the ships on a grid, keeping track of what coordinates they are at and their state (sunk or not). It is best to first understand exactly what each block does before using it. You can do this by visiting the wiki of the RPC. For the Battleship RPC, you can see what each custom block does [here](https://github.com/NetsBlox/NetsBlox/wiki/Battleship-RPC). To see an example of an implementation utilizing the Battleship RPC, go to the "examples" section of this documentation.
 
 <a name="rooms" />
@@ -78,10 +76,10 @@ For example, above is what can be see after importing the "Battleship" RPC. Thes
 
 A *room* is the messaging platform for the application. It allows different people, or "roles", to communicate with each other. Messages can only be sent and received among roles in the same room. In NetsBlox, each new application starts with a room with just the app creator. To manage the room for the application, click the "Room" tab (next to "Sounds", "Costumes",and "Scripts"):
 
-![](screenshots/room2.PNG)
+![](screenshots/room2.PNG)  
 From here, there are many actions you can take.
 
-To add a role, click the plus button:
+To add a role, click the plus button:  
 ![](screenshots/addrole.PNG)
 
 To rename a role, click the name of the role. 
