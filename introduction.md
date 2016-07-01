@@ -74,7 +74,7 @@ For example, above is what can be see after importing the "Battleship" RPC. Thes
 
 ![](screenshots/room.PNG)
 
-A *room* is the messaging platform for the application. It allows different people, or "roles", to communicate with each other. Messages can only be sent and received among roles in the same room. In NetsBlox, each new application starts with a room with just the app creator. To manage the room for the application, click the "Room" tab (next to "Sounds", "Costumes",and "Scripts"):
+A *room* is the messaging platform for the application. It allows different people, or "roles", to communicate with each other. Messages can only be sent and received among roles in the same room. In NetsBlox, each new application starts with a room with just the app creator. To manage the room for the application, click the "Room" tab (next to "Sounds", "Costumes", and "Scripts"):
 
 ![](screenshots/room2.PNG)  
 From here, there are many actions you can take.
