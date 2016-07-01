@@ -4,8 +4,11 @@ Welcome to Netsblox! This visual programming environment can be very powerful on
 
 #### Jump To:
 [Messages](#messages)
+
 [Remote Procedure Calls](#RPCs)
+
 [Rooms](#rooms)
+
 # Getting Started
 
 ![](screenshots/home.PNG)
@@ -46,7 +49,6 @@ As you can see above, the only recipients able to be selected are "player 2" and
 ![](screenshots/player2_room.PNG)
 
 Note: the "everyone" recipient is everyone *but* you. (So in this case, everyone is just player 2). 
-
 To receive a message, simply place a `when I receive msg` block. 
 
 ![](screenshots/msg_dropdown.PNG)
@@ -62,14 +64,30 @@ After clicking the "test" message type, you can see that the variable "score" is
 <a name="RPCs" />
 # Remote Procedure Calls
 
-![](screenshots/rpc.PNG) ![](screenshots/rpcblocks.PNG)
+![](screenshots/import_rpc.PNG) ![](screenshots/rpc.PNG)
 
-*Remote Procedure Calls* (RPCs for short) provide server support and can help with some of the more complicated and intricate parts of a project. To import an RPC, click the white document at the top of the page and click "Remote Procedure Calls...". Once imported, the server support can be utilized in the form of custom blocks. For example, above is what can be see after importing the "Battleship" RPC. These blocks are calls to the NetsBlox server, executing scripts written on the server. For instance, the `start game` block "places" all the ships on the grid, keeping track of what coordinates they are at and their state. It is best to first understand exactly what each block does. You can do this by visiting the wiki of the RPC. For the Battleship RPC, you can see what each custom block does [here.](https://github.com/NetsBlox/NetsBlox/wiki/Battleship-RPC)
+*Remote Procedure Calls* (or RPCs for short) provide server support and can help with some of the more complicated and intricate parts of a project. To import an RPC, click the white document at the top of the page and click "Remote Calls...". Once imported, the server support can be utilized in the form of custom blocks. 
+
+![](screenshots/rpcblocks.PNG)
+For example, above is what can be see after importing the "Battleship" RPC. These blocks are calls to the NetsBlox server, executing scripts written on the server. For instance, the `start game` block places all the ships on a grid, keeping track of what coordinates they are at and their state (sunk or not). It is best to first understand exactly what each block does before using it. You can do this by visiting the wiki of the RPC. For the Battleship RPC, you can see what each custom block does [here](https://github.com/NetsBlox/NetsBlox/wiki/Battleship-RPC). To see an example of an implementation utilizing the Battleship RPC, go to the "examples" section of this documentation.
 
 <a name="rooms" />
 # Rooms
 
 ![](screenshots/room.PNG)
 
-A *room* is the messaging platform for the application. It allows different people, or "roles", to be in the same room. Messages can only be sent and received among roles in the same room. To manage the room
-for the application, click the "Room" tab (next to "Sounds", "Costumes",and "Scripts"). From here, you can add/remove roles, invite/kick people, and clone an entire role's blocks. In the above screenshot, there are 3 people ("myRole", "person 1", and "person 2") in the same room ("myRoom"). All of these clients have access to the privilege of messaging each other.
+A *room* is the messaging platform for the application. It allows different people, or "roles", to communicate with each other. Messages can only be sent and received among roles in the same room. In NetsBlox, each new application starts with a room with just the app creator. To manage the room for the application, click the "Room" tab (next to "Sounds", "Costumes",and "Scripts"):
+
+![](screenshots/room2.PNG)
+From here, there are many actions you can take.
+
+To add a role, click the plus button:
+![](screenshots/addrole.PNG)
+
+To rename a role, click the name of the role. 
+
+For all other actions, click on the empty space of the role:
+![](screenshots/editrole.PNG)
+
+If you click on the empty space of the role that you are currently occupying, the only action you will be able to do is clone yourself.
+
