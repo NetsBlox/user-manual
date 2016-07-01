@@ -12,7 +12,7 @@ This is the landing page and editor for NetsBlox. You can access it [here.](http
 
 ![](screenshots/message.PNG)
 
-*Messages* are one of the three main ideas behind NetsBlox. Similar to the `broadcast` block in Snap!, a message can be thought of as a `broadcast` to people on the 'outside'. Essentially, when you send a message to another person in the same *room* (explained later), the other person can have a listener block (similar to a "when I receive broadcast" block in Snap!) and execute certain blocks when he/she receives the message. Additionally, messages can carry variables which make it easy to communicate valuable information among people such as whose turn it is or how many points a player scored in the game. To view all of the available blocks for messsages, click on the "Services" block category tab in the top-left corner of the environment.
+*Messages* are one of the three main ideas behind NetsBlox. Similar to the `broadcast` block in Snap!, a message can be thought of as a `broadcast` to other people. Essentially, when you send a message to another person in the same *room* (explained later), the other person can have a listener block and execute certain commands when he/she receives the message. Additionally, messages can carry variables which make it easy to communicate valuable information among people such as whose turn it is or how many points a player scored in the game. To view all of the available blocks for messages, click on the "Services" block category tab in the top-left corner of the environment.
 
 ![](screenshots/sendmsg_dropdown.PNG)
 
