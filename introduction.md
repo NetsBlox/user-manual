@@ -12,7 +12,43 @@ This is the landing page and editor for NetsBlox. You can access it [here.](http
 
 ![](screenshots/message.PNG)
 
-*Messages* are one of the three main ideas behind NetsBlox. Similar to the `broadcast` block in Snap!, messages can be thought of as `broadcasts` to other people. Essentially, when you send a message to another person in the same *room* (explained later), the other person can have a listener block (similar to a "when I receive broadcast" block in Snap!) and execute certain blocks when he/she receives the message. Additionally, messages can carry variables which make it easy to communicate valuable information among people such as whose turn it is or how many points a player scored in the game.
+*Messages* are one of the three main ideas behind NetsBlox. Similar to the `broadcast` block in Snap!, a message can be thought of as a `broadcast` to people on the 'outside'. Essentially, when you send a message to another person in the same *room* (explained later), the other person can have a listener block (similar to a "when I receive broadcast" block in Snap!) and execute certain blocks when he/she receives the message. Additionally, messages can carry variables which make it easy to communicate valuable information among people such as whose turn it is or how many points a player scored in the game. To view all of the available blocks for messsages, click on the "Services" block category tab in the top-left corner of the environment.
+
+![](screenshots/sendmsg_dropdown.PNG)
+
+Above is the block to use to send a message. There is one dropdown menu, and it contains the *message type* to be sent. A message type can be thought as a unique name given to a specific message that can hold variables. To create a message type, click on the "Make a Message Type" block located in the same area as the other message blocks. 
+
+![](screenshots/makemsg.PNG)
+
+The following window should pop up: ![](screenshots/makemsg2.PNG)
+
+Here you can see that a message type is composed of two parts: a name, and the variables that it holds. Let's create a message type named "test" with the field "score". After creating it, you are then able to select it in the `send msg` dropdown: ![](screenshots/sendmsg_dropdown3.PNG)
+
+Notice that there is a white space labeled "score" that appears. This is where you can send whatever variable or value that you need to the recipient(s). For example, you could create a variable named "score" and then send it as follows: 
+
+![](screenshots/send_score.PNG)
+
+The second dropdown is for the recipient of the message. 
+
+![](screenshots/sendmsg_dropdown2.PNG) 
+
+As you can see above, the only recipients able to be selected are "player 2" and "everyone". That is because the *room* only has one other person in it, as seen below.
+
+![](screenshots/player2_room.PNG)
+
+Note: the "everyone" recipient is everyone *but* you. 
+
+To receive a message, simply place a `when I receive msg` block. 
+
+![](screenshots/msg_dropdown.PNG)
+
+There is only one dropdown menu. Since we created the "test" message type, we are able to select it. Note: you will need to create a message type for each role in the room that uses it.
+
+![](screenshots/msg_dropdown2.PNG)
+
+After clicking the "test" message type, you can see that the variable "score" is able to be used!
+
+![](screenshots/msg_dropdown3.PNG)
 
 # Remote Procedure Calls
 
